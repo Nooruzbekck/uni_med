@@ -81,7 +81,7 @@ const StyledDrawer = styled(Drawer)({
   [`& .MuiDrawer-paper`]: {
     width: 240,
     boxSizing: "border-box",
-    backgroundColor: "#6C63FF",
+    backgroundColor: "#5865F2",
     color: "#fff",
     borderRadius: "35px 0px 0px 35px",
   },
