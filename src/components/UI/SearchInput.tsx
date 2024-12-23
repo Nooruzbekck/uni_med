@@ -54,34 +54,10 @@ export const SearchInput: React.FC<SearchInputProps> = ({
 
 const Input = styled(TextField)(() => ({
   "& .input": {
-    border: "1px solid #AFAFAF",
-    borderRadius: "8px",
+    borderRadius: "24px",
     background: "#FFFFFF",
-    color: "black",
-    padding: "0px 4px 0px 8px",
-  },
-
-  "& .input.Mui-error": {
-    border: "1px solid red",
-  },
-
-  "& .input:not(.Mui-error):hover": {
-    border: "1px solid #0079BF",
-  },
-
-  "&:focus": {
-    border: "1px solid #919191",
-    color: "#919191",
-    "& .MuiInputLabel-root": {
-      color: "#919191",
-    },
-  },
-
-  "& .MuiInputLabel-root": {
-    color: "#AFAFAF",
-    fontSize: "16px",
-    background: "white",
-    padding: "0px 4px 0px 8px",
+    color: "#949393",
+    padding: "4px 16px 4px 16px",
   },
 
   "& .MuiInputLabel-root.Mui-focused": {
