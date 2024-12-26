@@ -4,3 +4,30 @@
   box-sizing: border-box;
   font-family: "Roboto", serif;
 }
+
+.fc-theme-standard td,
+.fc-theme-standard th {
+  border: none !important;
+  margin-right: 10px;
+}
+.fc-scrollgrid {
+  border: none !important;
+}
+.fc-timegrid-slot .fc-timegrid-slot-label .fc-scrollgrid-shrink {
+  border: none !important;
+}
+.fc-theme-standard td:last-child {
+  border-top: 1px solid #ddd !important;
+}
+
+.fc-daygrid-day {
+  border: none !important;
+}
+
+.fc-scrollgrid-sync-inner {
+  border: none !important;
+}
+.fc-event {
+  border: none !important;
+  padding: 5px;
+}
