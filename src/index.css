@@ -1,3 +1,15 @@
+@font-face {
+  font-family: "Helvetica";
+  src:
+    url("./assets/fonts/helvetica-255/Helvetica-Bold.ttf") format("truetype"),
+    url("./assets/fonts/helvetica-255/Helvetica-BoldOblique.woff") format("woff"),
+    url("./assets/fonts/helvetica-255/helvetica-compressed-5871d14b6903a.woff2") format("woff2"),
+    url("./assets/fonts/helvetica-255/helvetica-light-587ebe5a59211.ttf") format("truetype"),
+    url("./assets/fonts/helvetica-255/Helvetica-Oblique.ttf") format("truetype"),
+    url("./assets/fonts/helvetica-255/helvetica-rounded-bold-5871d05ead8de.otf") format("opentype"),
+    url("./assets/fonts/helvetica-255/Helvetica.ttf") format("truetype");
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,6 +17,11 @@
   font-family: "Roboto", serif;
 }
 
+body {
+  font-family: "Helvetica", serif;
+}
+
+/* 
 .fc-theme-standard td,
 .fc-theme-standard th {
   border: none !important;
@@ -30,4 +47,4 @@
 .fc-event {
   border: none !important;
   padding: 5px;
-}
+} */

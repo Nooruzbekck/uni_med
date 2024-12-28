@@ -85,6 +85,7 @@ const SelectStyle = styled(MuiSelect)(() => ({
     "& svg": {
       width: "24px",
       height: "24px",
+      cursor: "pointer",
     },
     "& span": {
       color: "#5865F2",
@@ -105,8 +106,11 @@ const Placeholder = styled("span")({
 const MenuItemStyle = styled(MenuItem)(() => ({
   fontSize: "18px",
   fontWeight: "400",
+  borderRadius: "12px",
+  marginTop: "1px",
+
   "&:hover": {
-    background: "#5865F2",
+    background: "#9da4f2",
     color: "#fff",
   },
   "&.Mui-selected": {

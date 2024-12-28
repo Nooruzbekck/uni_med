@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   FormControl,
   SelectChangeEvent,
@@ -18,15 +18,26 @@ import { ru } from "date-fns/locale";
 import { Select } from "../components/UI/Select";
 import ArrowBlock from "../components/UI/ArrowBlock";
 
-const options = [
-  { value: "option1", label: "Опция 1" },
-  { value: "option2", label: "Опция 2" },
-  { value: "option3", label: "Опция 3", disabled: true },
+const WEEK_OPTIONS = [
+  { value: "week", label: "Неделя" },
+  { value: "all-doctors-week", label: "Все врачи на неделю" },
+];
+
+const MONTH_OPTIONS = [
+  { value: "month", label: "Месяц" },
+  { value: "all-doctors-month", label: "Все врачи на месяц" },
 ];
 
 export const Header = () => {
   const [weekSelectedValue, setWeekSelectedValue] = useState<string | number | undefined>("");
   const [monthSelectedValue, setMonthSelectedValue] = useState<string | number | undefined>("");
+  const [day, setDay] = useState("day");
+
+  useEffect(() => {
+    if (weekSelectedValue || monthSelectedValue) {
+      setDay("");
+    }
+  }, [weekSelectedValue, monthSelectedValue]);
 
   const handleChange = (event: SelectChangeEvent<unknown>) => {
     setWeekSelectedValue(event.target.value as string | number);
@@ -34,6 +45,10 @@ export const Header = () => {
 
   const handleMonthChange = (event: SelectChangeEvent<unknown>) => {
     setMonthSelectedValue(event.target.value as string | number);
+  };
+
+  const handleDayClick = () => {
+    setDay("day");
   };
 
   return (
@@ -45,11 +60,13 @@ export const Header = () => {
 
       <ActionContainer>
         <ToggleSwitch />
-        <TabButton>День</TabButton>
+        <TabButton onClick={handleDayClick} className={day ? "active" : ""}>
+          День
+        </TabButton>
 
         <FormControl sx={{ width: "125px" }}>
           <Select
-            options={options}
+            options={WEEK_OPTIONS}
             value={weekSelectedValue}
             onChange={handleChange}
             placeholder="Неделя"
@@ -58,7 +75,7 @@ export const Header = () => {
         </FormControl>
         <FormControl sx={{ width: "125px" }}>
           <Select
-            options={options}
+            options={MONTH_OPTIONS}
             value={monthSelectedValue}
             onChange={handleMonthChange}
             placeholder="Месяц"
@@ -120,10 +137,16 @@ const TabButton = styled("div")({
   padding: "15px 20px",
   borderRadius: "16px",
   background: "#FFFFFF",
+  cursor: "pointer",
 
   fontSize: "15px",
   fontWeight: "700",
   color: "#5865F2",
+
+  "&.active": {
+    background: "#5865F2",
+    color: "#FFFFFF",
+  },
 });
 
 export const ToggleSwitch: React.FC = () => {

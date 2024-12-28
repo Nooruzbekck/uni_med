@@ -9,8 +9,8 @@ const getDaysOfWeek = (startOfWeek: Date) => {
     day.setDate(startOfWeek.getDate() + i);
     days.push({
       day: day.toLocaleString("ru-RU", { weekday: "long" }),
-      date: day.toLocaleString("ru-RU", { day: "numeric", month: "long" }),
-      isWeekend: i === 6,
+      date: day.toLocaleDateString("ru-RU"),
+      isWeekend: i === 6 || i === 0,
     });
   }
 
@@ -48,8 +48,10 @@ export const DaysOfWeekCalendar: React.FC = () => {
     setDaysOfWeek(getDaysOfWeek(startOfWeek));
   }, [startOfWeek]);
 
+  const today = new Date().toLocaleDateString("ru-RU");
+
   return (
-    <Box display="flex" alignItems="center" gap={2} padding="5px 20px" marginBottom="10px">
+    <Box display="flex" alignItems="center" gap={2} padding="5px 0" marginBottom="10px">
       <ArrowBlock rotate onClick={() => handleScroll("left")} />
 
       <Box
@@ -71,13 +73,9 @@ export const DaysOfWeekCalendar: React.FC = () => {
               minWidth: "100px",
               textAlign: "center",
               borderRadius: "10px",
-              cursor: "pointer",
               width: "100vw",
-              backgroundColor: selectedDate === date ? "#e0e7ff" : "transparent",
-              color: isWeekend ? (selectedDate === date ? "red" : "red") : "inherit",
-              "&:hover": {
-                backgroundColor: selectedDate === date ? "#c5d3ff" : "#f5f5f5",
-              },
+              backgroundColor: date === today ? "#c5d3ff" : "transparent",
+              color: isWeekend ? (selectedDate === date ? "red" : "blue") : "inherit",
             }}
           >
             <Typography variant="body2" color={isWeekend ? "#D80E0C" : "#5865F2"}>
@@ -85,7 +83,7 @@ export const DaysOfWeekCalendar: React.FC = () => {
             </Typography>
             <Typography
               variant="body1"
-              color={isWeekend ? "#D80E0C" : "№101010"}
+              color={isWeekend ? "#D80E0C" : "#101010"}
               sx={{
                 fontWeight: "700",
                 fontSize: "15px",
