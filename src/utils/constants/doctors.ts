@@ -13,10 +13,10 @@ export const doctors: Doctor[] = [
     events: [
       {
         appointmentId: 0,
-        startTime: "2024-12-28T14:00:45.858Z",
-        endTime: "2024-12-28T14:30:45.858Z",
+        startTime: "2025-01-03T14:00:00.858Z",
+        endTime: "2025-01-03T15:40:00.858Z",
         description: "string",
-        appointmentStatus: "COMPLETED",
+        appointmentStatus: "CANCELED",
         userId: 0,
         userFirstName: "string",
         userLastName: "string",

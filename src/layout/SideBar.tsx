@@ -71,6 +71,8 @@ export const SideBar = () => {
           ))}
         </StyledList>
       </Box>
+
+      {}
     </StyledDrawer>
   );
 };

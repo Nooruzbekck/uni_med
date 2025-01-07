@@ -344,7 +344,7 @@ export const CalendarByDay: React.FC = () => {
 };
 
 const StyledHour = styled(Typography)({
-  "& svg": {
+  "& svg path": {
     position: "absolute",
     bottom: 7,
     right: -5,
