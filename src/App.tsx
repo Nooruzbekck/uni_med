@@ -3,7 +3,6 @@ import { CalendarByDay } from "./components/Schedule/CalendarByDay";
 // import { CalendarMonth } from "./components/Schedule/CalendarMonth";
 import { Header } from "./layout/Header";
 import { SideBar } from "./layout/SideBar";
-
 // import DashboardPage from "./pages/DashboardPage";
 
 export const App = () => {
